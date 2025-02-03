@@ -1,0 +1,42 @@
+Cabecera de la clase:
+
+#pragma once
+
+class Operaciones
+{
+	private:
+		float a;
+		float b;
+		float suma;
+	public:
+		Operaciones();
+		void calcularsumar();
+
+
+};
+
+La Implementacion de la clase:
+
+#include "Operaciones.h"
+#include <iostream>
+using namespace std;
+
+Operaciones::Operaciones() {
+	a = 4;
+	b = 5.3;
+}
+void Operaciones::calcularsumar() {
+	suma = a + b;
+	cout << "La suma es: " << suma;
+}
+Main del programa:
+
+#include <iostream>
+#include "Operaciones.h"
+using namespace std;
+
+int main()
+{
+    Operaciones operacioncitas;
+    operacioncitas.calcularsumar();
+}
