@@ -1,0 +1,161 @@
+Cabecera de la clase(triangulo):
+#pragma once
+class Triangulo
+{
+private:
+	float base;
+	float altura;
+public:
+	Triangulo();
+	void set_altura(float _altura);
+	void set_base(float _base);
+	float get_altura();
+	float get_base();
+	float area();
+};
+La Implementacion de la clase(triangulo):
+#include "Triangulo.h"
+Triangulo::Triangulo() {
+}
+void Triangulo::set_altura(float _altura) {
+	altura = _altura;
+}
+void Triangulo::set_base(float _base) {
+	base = _base;
+}
+float Triangulo::get_altura() {
+	return altura;
+}
+float Triangulo::get_base() {
+	return base;
+}
+float Triangulo::area() {
+	return (base * altura) / 2;
+}
+Cabecera de la clase(circulo):
+#pragma once
+class circulo
+{
+private:
+	float radio;
+public:
+	circulo();
+	void set_radio(float _radio);
+	float get_radio();
+	float area();
+};
+La Implementacion de la clase(circulo):
+#include "circulo.h"
+circulo::circulo() {
+}
+void circulo::set_radio(float _radio) {
+	radio = _radio;
+}
+float circulo::get_radio() {
+	return radio;
+}
+float circulo::area() {
+	return (3.1416*radio*radio);
+}
+Cabecera de la clase(cuadrado):
+#pragma once
+class cuadrado
+{
+private:
+	float base;
+	float altura;
+public:
+	cuadrado();
+	void set_altura(float _altura);
+	void set_base(float _base);
+	float get_altura();
+	float get_base();
+	float area();
+};
+La Implementacion de la clase(cuadrado):
+#include "cuadrado.h"
+cuadrado::cuadrado() {
+}
+void cuadrado::set_altura(float _altura) {
+	altura = _altura;
+}
+void cuadrado::set_base(float _base) {
+	base = _base;
+}
+float cuadrado::get_altura() {
+	return altura;
+}
+float cuadrado::get_base() {
+	return base;
+}
+float cuadrado::area() {
+	return (base * altura);
+}
+main del programa:
+#include <iostream>
+#include "Triangulo.h"
+#include "circulo.h"
+#include "cuadrado.h"
+
+using namespace std;
+
+int main()
+{
+    float altura, base, radio;
+    int opcion;
+    do {
+        cout << "menu" << endl;
+        cout << "1. area de un triangulo" << endl;
+        cout << "2. area de un circulo" << endl;
+        cout << "3. area de un cuadrado" << endl;
+        cout << "0. salir" << endl;
+        cout << " ingrese la opcion: ";
+        cin >> opcion;
+        switch (opcion) {
+        case 1:
+            do {
+                cout << "Ingrese la base: ";
+                cin >> base;
+            } while (base < 1);
+            do {
+                cout << "Ingrese la altura: ";
+                cin >> altura;
+            } while (altura < 1);
+            Triangulo Triangulito;
+            Triangulito.set_altura(altura);
+            Triangulito.set_base(base);
+            cout << "El area es: " << Triangulito.area();
+            break;
+        case 2: 
+        do {
+            cout << "Ingrese el radio: ";
+            cin >> radio;
+        } while (radio < 1);
+        circulo circ;
+        circ.set_radio(radio);
+        cout << "El area es: " << circ.area();
+        break;
+        case 3: 
+        do {
+            cout << "Ingrese la base: ";
+            cin >> base;
+        } while (base < 1);
+        do {
+            cout << "Ingrese la altura: ";
+            cin >> altura;
+        } while (altura < 1);
+        cuadrado cua;
+        cua.set_altura(altura);
+        cua.set_base(base);
+        cout << "El area es: " << cua.area();
+        break;
+        case 0:
+            cout << "saliendo....";
+            break;
+        default:
+            cout << " opcion no valida" << endl;
+            cout << "ingrese otra opcion" << endl;
+        }
+    } while (opcion != 0);
+    return 0;
+}
