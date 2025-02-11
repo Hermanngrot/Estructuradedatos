@@ -96,7 +96,6 @@ main del programa:
 #include "Triangulo.h"
 #include "circulo.h"
 #include "cuadrado.h"
-
 using namespace std;
 
 int main()
@@ -110,7 +109,10 @@ int main()
         cout << "3. area de un cuadrado" << endl;
         cout << "0. salir" << endl;
         cout << " ingrese la opcion: ";
-        cin >> opcion;
+        cin >> opcion; 
+        circulo circ;
+        cuadrado cua;
+        Triangulo Triangulito;
         switch (opcion) {
         case 1:
             do {
@@ -121,19 +123,19 @@ int main()
                 cout << "Ingrese la altura: ";
                 cin >> altura;
             } while (altura < 1);
-            Triangulo Triangulito;
+            
             Triangulito.set_altura(altura);
             Triangulito.set_base(base);
-            cout << "El area es: " << Triangulito.area();
+            cout << "El area es: " << Triangulito.area()<<endl;
             break;
         case 2: 
         do {
             cout << "Ingrese el radio: ";
             cin >> radio;
         } while (radio < 1);
-        circulo circ;
+       
         circ.set_radio(radio);
-        cout << "El area es: " << circ.area();
+        cout << "El area es: " << circ.area()<<endl;
         break;
         case 3: 
         do {
@@ -144,10 +146,10 @@ int main()
             cout << "Ingrese la altura: ";
             cin >> altura;
         } while (altura < 1);
-        cuadrado cua;
+        
         cua.set_altura(altura);
         cua.set_base(base);
-        cout << "El area es: " << cua.area();
+        cout << "El area es: " << cua.area()<<endl;
         break;
         case 0:
             cout << "saliendo....";
